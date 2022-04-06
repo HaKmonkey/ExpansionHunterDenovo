@@ -125,7 +125,7 @@ def compare_counts(test_params, sample_status, count_table):
 def correct_pvalues(count_table):
     num_tests = len(count_table)
     for row in count_table:
-        row["bonf_pvalue"] = min(row["pvalue"] * num_tests, 1.0)
+        row["bonf_pvalue"] = min(row["pvalue"] / num_tests, 1.0)
 
 
 def normalize_count(sample_depth, count, target_depth=40):
